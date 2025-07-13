@@ -4,7 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>VENofficial – The Silent Shield</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Style -->
   <style>
     html {
       scroll-behavior: smooth;
@@ -12,111 +16,161 @@
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(to bottom, #d0e8f2, #ffffff);
-      color: #000;
+      background: linear-gradient(135deg, #cceeff, #b388ff, #ff99cc);
+      background-size: 200% 200%;
+      animation: bgScroll 10s ease infinite;
+      color: #fff;
+      overflow-x: hidden;
     }
+
+    @keyframes bgScroll {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
     header {
-      background: #0a0a0a;
+      background: rgba(0, 0, 0, 0.4);
       padding: 20px 40px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       position: sticky;
       top: 0;
+      backdrop-filter: blur(10px);
       z-index: 1000;
     }
+
     header h1 {
+      font-family: 'Orbitron', sans-serif;
       font-size: 28px;
-      color: #f9004d;
+      color: #fff;
       margin: 0;
-      letter-spacing: 1px;
+      text-shadow: 0 0 5px #f9004d;
     }
+
     nav a {
       margin: 0 15px;
-      color: #ccc;
+      color: #fff;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 600;
+      position: relative;
     }
-    nav a:hover {
-      color: #f9004d;
+
+    nav a::after {
+      content: '';
+      display: block;
+      height: 2px;
+      background: #fff;
+      transform: scaleX(0);
+      transition: transform 0.3s;
+      transform-origin: left;
     }
-    section {
-      padding: 80px 20px;
-      max-width: 1000px;
-      margin: auto;
+
+    nav a:hover::after {
+      transform: scaleX(1);
     }
-    h2 {
-      font-size: 32px;
-      color: #0a0a0a;
-      border-left: 6px solid #f9004d;
-      padding-left: 12px;
-    }
+
     .hero {
       text-align: center;
-      padding: 100px 20px;
-      background: radial-gradient(circle at center, #ffffff 0%, #d0e8f2 100%);
+      padding: 120px 20px 60px;
     }
+
     .hero h1 {
       font-size: 60px;
-      color: #f9004d;
-      margin-bottom: 10px;
+      font-family: 'Orbitron', sans-serif;
+      color: #fff;
+      text-shadow: 0 0 10px #000;
     }
+
     .hero p {
       font-size: 20px;
       max-width: 700px;
       margin: auto;
-      color: #222;
+      color: #fff;
     }
+
+    a.button {
+      background: #fff;
+      color: #f9004d;
+      font-weight: bold;
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 25px;
+      display: inline-block;
+      margin-top: 30px;
+      transition: 0.3s ease;
+    }
+
+    a.button:hover {
+      background: #f9004d;
+      color: #fff;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h2 {
+      font-size: 32px;
+      color: #fff;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
     .card-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 30px;
-      margin-top: 30px;
     }
+
     .card {
-      background: #ffffff;
-      border-radius: 16px;
+      background: rgba(0, 0, 0, 0.3);
       padding: 25px;
-      transition: 0.3s ease;
-      border: 2px solid #f9004d55;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      border-radius: 16px;
+      transition: transform 0.4s ease;
       cursor: pointer;
+      backdrop-filter: blur(8px);
     }
+
     .card:hover {
-      transform: scale(1.03);
-      border-color: #f9004d;
+      transform: translateY(-8px);
+      background: rgba(0, 0, 0, 0.5);
     }
+
     .card h3 {
-      color: #0a0a0a;
-      font-size: 22px;
+      font-size: 24px;
       margin-bottom: 10px;
+      color: #fff;
     }
+
     .card p {
-      color: #333;
+      font-size: 16px;
+      color: #eee;
     }
+
     footer {
       text-align: center;
       padding: 40px 20px;
-      background: #0a0a0a;
+      background: rgba(0, 0, 0, 0.4);
+      color: #ccc;
       font-size: 14px;
-      color: #999;
     }
-    a.button {
+
+    .coming-soon {
+      font-size: 13px;
+      color: #ffccff;
+      background: #00000055;
       display: inline-block;
-      background: #f9004d;
-      padding: 12px 25px;
-      border-radius: 30px;
-      text-decoration: none;
-      color: white;
-      margin-top: 20px;
-      font-weight: bold;
-    }
-    .card a {
-      text-decoration: none;
-      color: inherit;
+      padding: 4px 10px;
+      margin-top: 8px;
+      border-radius: 20px;
     }
   </style>
 </head>
+
 <body>
 
   <header>
@@ -130,52 +184,53 @@
 
   <section class="hero">
     <h1>VEN</h1>
-    <p>The Silent Shield for Women – A wearable smart clip that protects, alerts, and empowers.  
-    Founded by <strong>Aafreen Zehra</strong>, a 19-year-old innovator from India to protect girls everywhere.</p>
+    <p>The Silent Shield for Women — a smart clip that protects, alerts, and empowers. Fashion meets safety.</p>
     <a href="#products" class="button">Explore Products</a>
   </section>
 
   <section id="products">
-    <h2>VEN Products</h2>
+    <h2>Our Products</h2>
     <div class="card-grid">
-      <a href="pro.html"><div class="card">
+      <div class="card" onclick="location.href='venpro.html'">
         <h3>VEN Clip Pro</h3>
-        <p>Advanced clip with GPS alerts, voice recording, vibration detection & emergency trigger.</p>
-      </div></a>
-
-      <a href="lite.html"><div class="card">
+        <p>Advanced clip with GPS, audio recording, & alert features.</p>
+        <div class="coming-soon">Coming Soon</div>
+      </div>
+      <div class="card" onclick="location.href='venlite.html'">
         <h3>VEN Clip Lite</h3>
-        <p>Affordable version with core features to make safety accessible to every girl.</p>
-      </div></a>
-
-      <a href="safechat.html"><div class="card">
+        <p>Affordable clip with core safety tools, lightweight and reliable.</p>
+        <div class="coming-soon">Coming Soon</div>
+      </div>
+      <div class="card" onclick="location.href='safechat.html'">
         <h3>VEN SafeChat</h3>
-        <p>A safe space to share real problems with real people — no AI, just real support.</p>
-      </div></a>
-
-      <a href="phishx.html"><div class="card">
+        <p>Anonymous real talk space — speak your truth to real humans.</p>
+      </div>
+      <div class="card" onclick="location.href='phishx.html'">
         <h3>VEN PhishX</h3>
-        <p>AI-powered phishing link detection for your Gmail, WhatsApp & more.</p>
-      </div></a>
+        <p>AI-based link safety checker. Paste. Scan. Breathe easy.</p>
+      </div>
     </div>
   </section>
 
   <section id="about">
-    <h2>About the Founder</h2>
-    <p>Hi, I'm <strong>Aafreen Zehra</strong>, a 19-year-old student from Chennai, India.  
-    VEN was born out of a deep desire to help girls feel safe — not just through words, but real, powerful tools.</p>
+    <h2>About Aafreen</h2>
+    <p style="text-align: center;">
+      I'm <strong>Aafreen Zehra</strong>, 19, from Chennai 🇮🇳 – the founder of VENofficial.  
+      <br>VEN was born from a dream to build smart, stylish, powerful protection for girls who deserve to feel safe — always.
+    </p>
   </section>
 
   <section id="inspiration">
     <h2>Why “VEN”?</h2>
-    <p>VEN comes from my favorite protector — <strong>Venom</strong>.  
-    Like Venom, our clip protects silently but powerfully. Hidden. Fierce. Smart.</p>
+    <p style="text-align: center;">
+      “VEN” comes from <strong>Venom</strong> — my favorite character.  
+      <br>Just like him, VEN silently protects with fierce power. Smart. Hidden. Always there.
+    </p>
   </section>
 
   <footer>
-    © 2025 VENofficial.in – Built by Aafreen Zehra 💙 | All rights reserved.
+    © 2025 VENofficial.in | Built by Aafreen Zehra 💙 | All rights reserved.
   </footer>
 
 </body>
 </html>
-
