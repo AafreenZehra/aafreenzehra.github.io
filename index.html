@@ -1,21 +1,22 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>VENofficial – The Silent Shield</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Rubik&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
   <style>
     html {
       scroll-behavior: smooth;
     }
     body {
       margin: 0;
-      font-family: 'Rubik', sans-serif;
-      background: #0a0a0a;
-      color: #f2f2f2;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom, #d0e8f2, #ffffff);
+      color: #000;
     }
     header {
-      background: #111;
+      background: #0a0a0a;
       padding: 20px 40px;
       display: flex;
       justify-content: space-between;
@@ -25,14 +26,14 @@
       z-index: 1000;
     }
     header h1 {
-      font-family: 'Orbitron', sans-serif;
       font-size: 28px;
       color: #f9004d;
       margin: 0;
+      letter-spacing: 1px;
     }
     nav a {
       margin: 0 15px;
-      color: #aaa;
+      color: #ccc;
       text-decoration: none;
       font-weight: bold;
     }
@@ -46,16 +47,17 @@
     }
     h2 {
       font-size: 32px;
-      color: #f9004d;
+      color: #0a0a0a;
+      border-left: 6px solid #f9004d;
+      padding-left: 12px;
     }
     .hero {
       text-align: center;
       padding: 100px 20px;
-      background: radial-gradient(circle at center, #111 0%, #000 100%);
+      background: radial-gradient(circle at center, #ffffff 0%, #d0e8f2 100%);
     }
     .hero h1 {
       font-size: 60px;
-      font-family: 'Orbitron', sans-serif;
       color: #f9004d;
       margin-bottom: 10px;
     }
@@ -63,6 +65,7 @@
       font-size: 20px;
       max-width: 700px;
       margin: auto;
+      color: #222;
     }
     .card-grid {
       display: grid;
@@ -71,35 +74,46 @@
       margin-top: 30px;
     }
     .card {
-      background: #1a1a1a;
-      border-radius: 12px;
-      padding: 20px;
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 25px;
       transition: 0.3s ease;
-      border: 1px solid #f9004d44;
+      border: 2px solid #f9004d55;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
     }
     .card:hover {
       transform: scale(1.03);
       border-color: #f9004d;
     }
     .card h3 {
-      color: #f9004d;
+      color: #0a0a0a;
       font-size: 22px;
+      margin-bottom: 10px;
+    }
+    .card p {
+      color: #333;
     }
     footer {
       text-align: center;
       padding: 40px 20px;
-      background: #111;
+      background: #0a0a0a;
       font-size: 14px;
       color: #999;
     }
     a.button {
       display: inline-block;
       background: #f9004d;
-      padding: 10px 20px;
+      padding: 12px 25px;
       border-radius: 30px;
       text-decoration: none;
       color: white;
       margin-top: 20px;
+      font-weight: bold;
+    }
+    .card a {
+      text-decoration: none;
+      color: inherit;
     }
   </style>
 </head>
@@ -108,7 +122,7 @@
   <header>
     <h1>VENofficial</h1>
     <nav>
-      <a href="#departments">Departments</a>
+      <a href="#products">Products</a>
       <a href="#about">About</a>
       <a href="#inspiration">Inspiration</a>
     </nav>
@@ -116,47 +130,50 @@
 
   <section class="hero">
     <h1>VEN</h1>
-    <p>The Silent Shield for Women – A wearable smart clip that protects, alerts, and empowers.</p>
-    <a href="#departments" class="button">Explore VEN</a>
+    <p>The Silent Shield for Women – A wearable smart clip that protects, alerts, and empowers.  
+    Founded by <strong>Aafreen Zehra</strong>, a 19-year-old innovator from India to protect girls everywhere.</p>
+    <a href="#products" class="button">Explore Products</a>
   </section>
 
-  <section id="departments">
-    <h2>VEN Departments</h2>
+  <section id="products">
+    <h2>VEN Products</h2>
     <div class="card-grid">
-      <div class="card">
+      <a href="pro.html"><div class="card">
         <h3>VEN Clip Pro</h3>
-        <p>Advanced safety clip with vibration sensor, location alert, and auto voice recording for emergencies.</p>
-      </div>
-      <div class="card">
+        <p>Advanced clip with GPS alerts, voice recording, vibration detection & emergency trigger.</p>
+      </div></a>
+
+      <a href="lite.html"><div class="card">
         <h3>VEN Clip Lite</h3>
-        <p>A simplified version of the VEN Clip, made affordable for every girl, with core safety features intact.</p>
-      </div>
-      <div class="card">
+        <p>Affordable version with core features to make safety accessible to every girl.</p>
+      </div></a>
+
+      <a href="safechat.html"><div class="card">
         <h3>VEN SafeChat</h3>
-        <p>A private chat system where girls can share real problems with real people – not AI, just pure support.</p>
-      </div>
-      <div class="card">
+        <p>A safe space to share real problems with real people — no AI, just real support.</p>
+      </div></a>
+
+      <a href="phishx.html"><div class="card">
         <h3>VEN PhishX</h3>
-        <p>AI-powered phishing link detector to protect your emails and devices. Verify unknown links instantly.</p>
-      </div>
+        <p>AI-powered phishing link detection for your Gmail, WhatsApp & more.</p>
+      </div></a>
     </div>
   </section>
 
   <section id="about">
     <h2>About the Founder</h2>
-    <p>Hi, I'm <strong>Aafreen Zehra</strong>, a 19-year-old student from India, and the founder of VENofficial.  
-    My dream is to build a safer world for girls through tech, starting with the smallest device that makes the biggest difference – a hair clip. VEN is for every girl who deserves to feel protected, without fear, without limits.</p>
+    <p>Hi, I'm <strong>Aafreen Zehra</strong>, a 19-year-old student from Chennai, India.  
+    VEN was born out of a deep desire to help girls feel safe — not just through words, but real, powerful tools.</p>
   </section>
 
   <section id="inspiration">
-    <h2>Why the Name VEN?</h2>
-    <p>The name "VEN" comes from my favorite character – <strong>Venom</strong>.  
-    Just like Venom protects the host silently and fiercely, VEN stays hidden, smart, and strong –  
-    to protect every girl in moments that matter the most.</p>
+    <h2>Why “VEN”?</h2>
+    <p>VEN comes from my favorite protector — <strong>Venom</strong>.  
+    Like Venom, our clip protects silently but powerfully. Hidden. Fierce. Smart.</p>
   </section>
 
   <footer>
-    © 2025 VENofficial.in – Built and protected by Aafreen Zehra 💙 | All rights reserved.
+    © 2025 VENofficial.in – Built by Aafreen Zehra 💙 | All rights reserved.
   </footer>
 
 </body>
