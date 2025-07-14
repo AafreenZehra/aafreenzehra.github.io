@@ -12,7 +12,7 @@
     body {
       margin: 0;
       font-family: 'Rubik', sans-serif;
-      background: linear-gradient(135deg, #0f061d, #3a0848, #790a55);
+      background: linear-gradient(135deg, #0c0f24, #0e1a3a, #1e2d4d);
       background-size: 400% 400%;
       animation: gradientShift 15s ease infinite;
       color: #ffffff;
@@ -27,7 +27,7 @@
 
     .background-text {
       position: absolute;
-      top: 40%;
+      top: 30%;
       left: 50%;
       transform: translate(-50%, -50%);
       font-size: 100px;
@@ -40,13 +40,22 @@
       text-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
     }
 
+    #particles-js {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
     body > *:not(.background-text) {
       position: relative;
       z-index: 1;
     }
 
     header {
-      background: rgba(0, 0, 0, 0.6);
+      background: rgba(0, 0, 255, 0.6);
       padding: 20px 40px;
       display: flex;
       justify-content: space-between;
@@ -58,7 +67,7 @@
     header h1 {
       font-family: 'Orbitron', sans-serif;
       font-size: 28px;
-      color: #f9004d;
+      color: #a30031;
       margin: 0;
     }
     nav a {
@@ -68,7 +77,7 @@
       font-weight: bold;
     }
     nav a:hover {
-      color: #f9004d;
+      color: #a30031;
     }
 
     section {
@@ -90,7 +99,7 @@
     .hero h1 {
       font-size: 70px;
       font-family: 'Orbitron', sans-serif;
-      color: #f9004d;
+      color: #a30031;
       margin-bottom: 10px;
     }
     .hero p {
@@ -115,10 +124,10 @@
     }
     .card:hover {
       transform: scale(1.05);
-      border-color: #f9004d;
+      border-color: #a30031;
     }
     .card h3 {
-      color: #f9004d;
+      color: #a30031;
       font-size: 24px;
       margin-bottom: 10px;
     }
@@ -130,14 +139,14 @@
     footer {
       text-align: center;
       padding: 40px 20px;
-      background: rgba(0, 0, 0, 0.6);
+      background: rgba(0, 0, 255, 0.3);
       font-size: 14px;
       color: #aaa;
     }
 
     a.button {
       display: inline-block;
-      background: #f9004d;
+      background: #a30031;
       padding: 12px 28px;
       border-radius: 30px;
       text-decoration: none;
@@ -149,9 +158,11 @@
       background: #ff57d4;
     }
   </style>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
 </head>
 <body>
 
+  <div id="particles-js"></div>
   <div class="background-text">That's my girl</div>
 
   <header>
@@ -165,12 +176,12 @@
 
   <section class="hero">
     <h1>VEN</h1>
-    <p>The Silent Shield for Women – A wearable smart clip that protects, alerts, and empowers.</p>
+    <p>The Silent Shield for Women – A smart clip that protects, alerts, and empowers in moments that matter.</p>
     <a href="#products" class="button">Explore VEN</a>
   </section>
 
   <section id="products">
-    <h2>Our Products</h2>
+    <h2>VEN Products</h2>
     <div class="card-grid">
       <div class="card">
         <h3>VEN Clip Pro</h3>
@@ -197,19 +208,23 @@
 
   <section id="about">
     <h2>About the Founder</h2>
-    <p>Hi, I'm <strong>Aafreen Zehra</strong>, a 19-year-old student from Chennai, India – Founder & CEO of VENofficial.  
+    <p>Hi, I'm <strong>Aafreen Zehra</strong>, a 19-year-old student from Chennai, India – Founder & CEO of VENofficial.
     I started VEN to build the smallest device that could protect women in the biggest moments. It’s not just a clip – it's a silent shield. VEN is tech born from heart, hope, and fierce protection for every girl.</p>
   </section>
 
   <section id="inspiration">
     <h2>Why the Name VEN?</h2>
-    <p>VEN stands for <strong>Venerable</strong> and is inspired by my favorite character – <strong>Venom</strong>.  
+    <p>VEN stands for <strong>Venerable</strong> and is inspired by my favorite character – <strong>Venom</strong>.
     Just like Venom protects its host in silence and power, VEN stays hidden but ready, smart but strong, watching but quiet – until the moment she needs it most.</p>
   </section>
 
   <footer>
     © 2025 VENofficial.in 💜 Made with strength & care by Aafreen Zehra | All rights reserved.
   </footer>
+
+  <script>
+    particlesJS.load('particles-js', 'https://cdn.jsdelivr.net/gh/VincentGarreau/particles.js/demo/particles.json');
+  </script>
 
 </body>
 </html>
