@@ -2,255 +2,213 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>VENofficial – The Silent Shield</title>
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <!-- AOS animations -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
-  <!-- Particles.js -->
-  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
-
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Rubik&family=Great+Vibes&display=swap" rel="stylesheet">
   <style>
     html {
       scroll-behavior: smooth;
     }
-
     body {
       margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: #0a0a0a;
-      color: #f4f4f4;
+      font-family: 'Rubik', sans-serif;
+      background: linear-gradient(135deg, #290742, #4c1c7c, #8f2dcf);
+      background-size: 400% 400%;
+      animation: gradientShift 15s ease infinite;
+      color: #ffffff;
       overflow-x: hidden;
     }
 
-    #tsparticles {
-      position: fixed;
+    @keyframes gradientShift {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    .background-text {
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 100px;
+      font-family: 'Great Vibes', cursive;
+      color: rgba(255, 255, 255, 0.06);
+      white-space: nowrap;
+      pointer-events: none;
       z-index: 0;
-      width: 100%;
-      height: 100%;
-      background: radial-gradient(circle at center, #10001f, #000000);
+      filter: blur(1.5px);
+      text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    }
+
+    body > *:not(.background-text) {
+      position: relative;
+      z-index: 1;
     }
 
     header {
-      background: rgba(0, 0, 0, 0.9);
+      background: rgba(0, 0, 0, 0.6);
       padding: 20px 40px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       position: sticky;
       top: 0;
-      z-index: 10;
-      box-shadow: 0 0 10px #7B2CBF44;
+      z-index: 1000;
     }
-
     header h1 {
       font-family: 'Orbitron', sans-serif;
       font-size: 28px;
-      color: #7B2CBF;
+      color: #f9004d;
       margin: 0;
     }
-
     nav a {
       margin: 0 15px;
-      color: #aaa;
+      color: #ccc;
       text-decoration: none;
-      font-weight: 600;
+      font-weight: bold;
     }
-
     nav a:hover {
       color: #f9004d;
     }
 
     section {
-      position: relative;
-      z-index: 1;
-      padding: 80px 20px;
+      padding: 100px 20px;
       max-width: 1000px;
       margin: auto;
     }
 
     h2 {
-      font-size: 32px;
-      color: #7B2CBF;
+      font-size: 36px;
+      color: #ff57d4;
+      font-family: 'Orbitron', sans-serif;
     }
 
     .hero {
       text-align: center;
-      padding: 120px 20px;
+      padding: 150px 20px 80px;
     }
-
     .hero h1 {
-      font-size: 60px;
+      font-size: 70px;
       font-family: 'Orbitron', sans-serif;
       color: #f9004d;
       margin-bottom: 10px;
     }
-
     .hero p {
-      font-size: 20px;
+      font-size: 22px;
       max-width: 700px;
       margin: auto;
-    }
-
-    a.button {
-      display: inline-block;
-      background: #f9004d;
-      padding: 10px 25px;
-      border-radius: 30px;
-      text-decoration: none;
-      color: white;
-      font-weight: 600;
-      margin-top: 20px;
-      transition: background 0.3s ease;
-    }
-
-    a.button:hover {
-      background: #c4003b;
     }
 
     .card-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 30px;
-      margin-top: 30px;
+      margin-top: 40px;
     }
-
     .card {
-      background: rgba(26, 26, 26, 0.9);
+      background: rgba(255, 255, 255, 0.05);
       border-radius: 15px;
-      padding: 20px;
-      transition: 0.3s ease;
-      border: 1px solid #7B2CBF55;
-      box-shadow: 0 0 10px #111;
+      padding: 25px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      transition: transform 0.3s;
     }
-
     .card:hover {
-      transform: scale(1.04);
-      box-shadow: 0 0 25px #7B2CBFaa;
+      transform: scale(1.05);
       border-color: #f9004d;
-      cursor: pointer;
     }
-
     .card h3 {
       color: #f9004d;
-      font-size: 22px;
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    .card a {
+      color: #ccc;
+      text-decoration: underline;
     }
 
     footer {
       text-align: center;
       padding: 40px 20px;
-      background: #0c0c0c;
+      background: rgba(0, 0, 0, 0.6);
       font-size: 14px;
-      color: #999;
+      color: #aaa;
     }
 
-    footer strong {
-      color: #f9004d;
+    a.button {
+      display: inline-block;
+      background: #f9004d;
+      padding: 12px 28px;
+      border-radius: 30px;
+      text-decoration: none;
+      color: white;
+      margin-top: 30px;
+      transition: 0.3s;
+    }
+    a.button:hover {
+      background: #ff57d4;
     }
   </style>
 </head>
-
 <body>
-  <div id="tsparticles"></div>
+
+  <div class="background-text">That's my girl</div>
 
   <header>
     <h1>VENofficial</h1>
     <nav>
-      <a href="#departments">Products</a>
+      <a href="#products">Products</a>
       <a href="#about">About</a>
       <a href="#inspiration">Inspiration</a>
     </nav>
   </header>
 
-  <section class="hero" data-aos="fade-up">
+  <section class="hero">
     <h1>VEN</h1>
-    <p>The Silent Shield for Women – A smart clip that protects, alerts, and empowers in moments that matter.</p>
-    <a href="#departments" class="button">Explore VEN</a>
+    <p>The Silent Shield for Women – A wearable smart clip that protects, alerts, and empowers. </p>
+    <a href="#products" class="button">Explore VEN</a>
   </section>
 
-  <section id="departments" data-aos="fade-up">
-    <h2>VEN Products</h2>
+  <section id="products">
+    <h2>Our Products</h2>
     <div class="card-grid">
-      <div class="card" onclick="location.href='ven-pro.html'">
+      <div class="card">
         <h3>VEN Clip Pro</h3>
-        <p>Coming Soon – Advanced safety clip with sensors, auto alerts, and stealth tech for real emergencies.</p>
+        <p>Advanced safety clip with vibration sensor, location alert, and auto voice recording for emergencies.</p>
+        <a href="venpro.html">Learn More</a>
       </div>
-      <div class="card" onclick="location.href='ven-lite.html'">
+      <div class="card">
         <h3>VEN Clip Lite</h3>
-        <p>More affordable, yet secure – a basic safety clip with essential features for every girl.</p>
+        <p>A simplified version of the VEN Clip, made affordable for every girl, with core safety features intact.</p>
+        <a href="venlite.html">Learn More</a>
       </div>
-      <div class="card" onclick="location.href='ven-safechat.html'">
+      <div class="card">
         <h3>Tell VEN what's going on!</h3>
-        <p>A private zone where anyone can share their feelings freely. No AI ~ Areal connection between you and VEN.</p>
+        <p>A private chat system where anyone can share real problems with VEN – not AI, just pure connection.</p>
+        <a href="safechat.html">Learn More</a>
       </div>
-      <div class="card" onclick="location.href='ven-phishx.html'">
+      <div class="card">
         <h3>VEN PhishX</h3>
-        <p>Smart link-checking tool that protects your digital space. Verify unknown links instantly.</p>
+        <p>AI-powered phishing link detector to protect your emails and devices. Verify unknown links instantly.</p>
+        <a href="phishx.html">Learn More</a>
       </div>
     </div>
   </section>
 
-  <section id="about" data-aos="fade-up">
-    <h2>About the Founder & CEO</h2>
-    <p>Hi, I'm <strong>Aafreen Zehra</strong>, a 19-year-old from Chennai and the founder of VENofficial.  
-    I created VEN to give girls a shield — silent, powerful, and beautiful — to defend their freedom and lives. VEN Clip is more than a product. It's a promise of safety.</p>
+  <section id="about">
+    <h2>About the Founder</h2>
+    <p>Hi, I'm <strong>Aafreen Zehra</strong>, a 19-year-old student from Chennai, India and the Founder & CEO of VENofficial.
+    My dream is to build a safer world through tech, starting with the smallest device that makes the biggest difference. VEN is for every girl who deserves to feel protected, without fear, without limits.</p>
   </section>
 
-  <section id="inspiration" data-aos="fade-up">
+  <section id="inspiration">
     <h2>Why the Name VEN?</h2>
-    <p>VEN comes from my favorite character <strong>Venom</strong>, and stands for <strong>Venerable</strong>.  
-    It silently protects, just like Venom defends its host — fierce and hidden. VEN is for every girl who deserves to walk fearless.</p>
+    <p>VEN comes from my favorite character Venom, and stands for Venerable. It silently protects, just like Venom defends its host — fierce and hidden. VEN is for every girl who deserves to walk fearless. – <strong>Venom</strong>. Like Venom, our clip protects silently but powerfully. Hidden. Fierce. Smart.</p>
   </section>
 
   <footer>
-    © 2025 <strong>VENofficial.in</strong> — Built and protected by Aafreen Zehra 💙 | All rights reserved.
+    © 2025 VENofficial.in ✨ Built by Aafreen Zehra 💙 | All rights reserved.
   </footer>
 
-  <!-- Scripts -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({ duration: 1000, once: true });
-  </script>
-
-  <!-- Particle background config -->
-  <script>
-    tsParticles.load("tsparticles", {
-      fullScreen: { enable: false },
-      particles: {
-        number: { value: 60 },
-        color: { value: "#7B2CBF" },
-        shape: { type: "circle" },
-        opacity: { value: 0.3 },
-        size: { value: 3 },
-        move: {
-          enable: true,
-          speed: 0.6,
-          direction: "none",
-          random: false,
-          straight: false,
-          outModes: "bounce"
-        },
-        links: {
-          enable: true,
-          color: "#f9004d",
-          distance: 120,
-          opacity: 0.5
-        }
-      },
-      interactivity: {
-        events: {
-          onHover: { enable: true, mode: "repulse" },
-          onClick: { enable: true, mode: "push" }
-        },
-        modes: {
-          repulse: { distance: 100 },
-          push: { quantity: 3 }
-        }
-      },
-      background: { color: "#0a0a0a" }
-    });
-  </script>
 </body>
 </html>
